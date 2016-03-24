@@ -40,7 +40,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         {
             if (m_State == GearState.Lowered && m_Plane.Altitude > raiseAtAltitude && m_Rigidbody.velocity.y > 0)
             {
-                m_State = GearState.Raised;
+                m_State = GearState.Lowered;
             }
 
             if (m_State == GearState.Raised && m_Plane.Altitude < lowerAtAltitude && m_Rigidbody.velocity.y < 0)
