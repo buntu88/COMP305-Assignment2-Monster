@@ -41,11 +41,11 @@ public class PlayerShooting : MonoBehaviour {
 
 			if (Physics.Raycast (this._transform.position, this._transform.forward, out hit, 10000f)) {
 
-				//if (hit.transform.gameObject.CompareTag ("Ground")) {
-				//	Instantiate (this.stonebulletImpact, hit.point, Quaternion.identity);
-    //                //Destroy (hit.transform.gameObject);
-    //                this._gameController.ScoreValue += 100;
-				//}
+                if (hit.transform.gameObject.CompareTag("Ground"))
+                {
+                    Instantiate(this.stonebulletImpact, hit.point, Quaternion.identity);
+                    this._gameController.ScoreValue += 100;
+                }
                 if (hit.transform.gameObject.CompareTag("Enemy"))
                 {
                     Instantiate(this.explosion, hit.point, Quaternion.identity);

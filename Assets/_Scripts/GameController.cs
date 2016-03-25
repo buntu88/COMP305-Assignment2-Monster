@@ -51,7 +51,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this._initialize ();
-
 		Instantiate (this.player, this._playerSpawnPoint, Quaternion.Euler(0, 167, 0));
 	}
 	
