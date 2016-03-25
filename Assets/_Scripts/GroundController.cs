@@ -32,7 +32,6 @@ public class GroundController : MonoBehaviour
         Transform playerTransform = other.gameObject.GetComponent<Transform>();
         playerTransform.position = this._playerSpawnPoint;
         playerTransform.Rotate(0, 167, 0);
-
         this._gameController.LivesValue--;
 
 
