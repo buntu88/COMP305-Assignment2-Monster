@@ -7,17 +7,20 @@ public class PlayerShooting : MonoBehaviour {
 	public Transform flashPoint1;
     public Transform flashPoint2;
     public GameObject muzzleFlash;
-	public GameObject bulletImpact;
-	public GameObject explosion;
+	public GameObject metalbulletImpact;
+    public GameObject stonebulletImpact;
+    public GameObject explosion;
 
-	public GameController gameController;
+
 
 	// PRIVATE INSTANCE VARIABLES
 	private Transform _transform;
+    private GameController _gameController;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		this._transform = gameObject.GetComponent<Transform> ();
+        this._gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent("GameController") as GameController;
 			
 	} // end Start
 	
@@ -27,6 +30,8 @@ public class PlayerShooting : MonoBehaviour {
 	} // end Update
 
 
+
+
 	void FixedUpdate() {
 		if (Input.GetButtonDown ("Fire1")) {
 			Instantiate (this.muzzleFlash, flashPoint1.position, Quaternion.identity);
@@ -34,19 +39,22 @@ public class PlayerShooting : MonoBehaviour {
 
             RaycastHit hit; // stores information from the Ray;
 
-			if (Physics.Raycast (this._transform.position, this._transform.forward, out hit, 50f)) {
+			if (Physics.Raycast (this._transform.position, this._transform.forward, out hit, 10000f)) {
 
-				if (hit.transform.gameObject.CompareTag ("Ground")) {
-					Instantiate (this.explosion, hit.point, Quaternion.identity);
-					Destroy (hit.transform.gameObject);
-					this.gameController.ScoreValue += 100;
-				} else {
+				//if (hit.transform.gameObject.CompareTag ("Ground")) {
+				//	Instantiate (this.stonebulletImpact, hit.point, Quaternion.identity);
+    //                //Destroy (hit.transform.gameObject);
+    //                this._gameController.ScoreValue += 100;
+				//}
+                if (hit.transform.gameObject.CompareTag("Enemy"))
+                {
+                    Instantiate(this.explosion, hit.point, Quaternion.identity);
+                    Destroy (hit.transform.gameObject);
+                    this._gameController.ScoreValue += 100;
+                }
 
-					Instantiate (this.bulletImpact, hit.point, Quaternion.identity);
-				}
 
-
-			}
+            }
 
 
 		} // end if

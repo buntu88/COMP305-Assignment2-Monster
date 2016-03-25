@@ -8,7 +8,7 @@ public class explode : MonoBehaviour {
 	public float health;
 
 	private bool bExploded;
-	private Game	gameController;
+	private Game gameController;
 
 	void Awake()
 	{

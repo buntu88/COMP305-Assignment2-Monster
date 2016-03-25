@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		this._initialize ();
 
-		Instantiate (this.player, this._playerSpawnPoint, Quaternion.identity);
+		Instantiate (this.player, this._playerSpawnPoint, Quaternion.Euler(0, 167, 0));
 	}
 	
 	// Update is called once per frame
@@ -64,8 +64,9 @@ public class GameController : MonoBehaviour {
 
 	//Initial Method
 	private void _initialize() {
-		this._playerSpawnPoint = new Vector3 (0f, 1.6f, -5f);
-		this.ScoreValue = 0;
+		this._playerSpawnPoint = new Vector3 (482f, 67.5f, 2434f);
+       
+        this.ScoreValue = 0;
 		this.LivesValue = 5;
 		this.GameOverLabel.gameObject.SetActive (false);
 		this.HighScoreLabel.gameObject.SetActive (false);
