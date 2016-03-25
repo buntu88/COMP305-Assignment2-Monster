@@ -48,6 +48,8 @@
      <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\GroundController.cs" />
      <Compile Include="Assets\_Scripts\PlayerShooting.cs" />
+     <Compile Include="Assets\_Scripts\RoadController.cs" />
+     <Compile Include="Assets\_Scripts\WallController.cs" />
      <Compile Include="Assets\_Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\_Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\_Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
