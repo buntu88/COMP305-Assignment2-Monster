@@ -101,7 +101,7 @@ public class GameController : MonoBehaviour
     public void _endGame()
     {
         this.HighScoreLabel.text = "High Score: " + this._scoreValue;
-        if (LivesValue > 0 || ScoreValue > 0)
+        if (LivesValue > 0 && ScoreValue > 0)
         {
             this.GameOverLabel.text = "You Win!!!";
         }
